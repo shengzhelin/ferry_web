@@ -29,7 +29,7 @@ class ItemController {
         delete mappedModel[STATE_SUFFIX]
       }
 
-      // 如果配置了 defaultEdge 或 defaultNode，則將默認配置的數據也合並進去
+      // 如果配置了 defaultEdge 或 defaultNode，則將默認配置的數據也合併進去
       model = deepMix({}, defaultModel, model, mappedModel)
     } else if (defaultModel) {
       // 很多佈局會直接修改原數據模型，所以不能用 merge 的形式，逐個寫入原 model 中

@@ -131,7 +131,7 @@ export default {
         integer: '整數',
         float: '浮點數',
         url: 'URL地址',
-        email: '郵箱地址',
+        email: '信箱地址',
         hex: '十六進制',
         gutter: '柵格間隔',
         columnOption: '列配置項',

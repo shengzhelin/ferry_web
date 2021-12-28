@@ -156,7 +156,7 @@ const ShapeBase = {
   */
 }
 
-// 注冊 Geometry 獲取圖形的入口
+// 註冊 Geometry 獲取圖形的入口
 Shape.registerFactory = function(factoryType, cfg) {
   const className = ucfirst(factoryType)
   const shapeFactory = Util.mix({}, ShapeFactoryBase, cfg)

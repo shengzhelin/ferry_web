@@ -313,7 +313,7 @@ class CustomGroup {
    *
    * @param {string} groupId 群組ID
    * @param {Group} deletage 群組元素
-   * @param {object} property 屬性值，里面包括width、height和maxX
+   * @param {object} property 屬性值，裡面包括width、height和maxX
    * @memberof ItemGroup
    */
   setDeletageGroupByStyle(groupId, deletage, property) {
@@ -829,7 +829,7 @@ class CustomGroup {
   }
 
   /**
-   * 更新節點分組位置及里面的節點和邊的位置
+   * 更新節點分組位置及裡面的節點和邊的位置
    * @param {string} groupId 節點分組ID
    * @param {object} position delegate的坐標位置
    */
@@ -837,7 +837,7 @@ class CustomGroup {
     const graph = this.graph
     const groupType = graph.get('groupType')
 
-    // 更新群組里面節點和線的位置
+    // 更新群組裡面節點和線的位置
     this.updateItemInGroup(groupId, position)
 
     // 判斷是否拖動出了parent group外面，如果拖出了parent Group外面，則更新數據，去掉group關聯

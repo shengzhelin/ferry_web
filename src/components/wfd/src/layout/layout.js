@@ -62,7 +62,7 @@ Layout.registerLayout = function(type, layout) {
       self.destroyed = true
     },
     /**
-     * 定義自定義行為的默認參數，會與用戶傳入的參數進行合並
+     * 定義自定義行為的默認參數，會與用戶傳入的參數進行合併
      */
     getDefaultCfg() {}
   }, layout)

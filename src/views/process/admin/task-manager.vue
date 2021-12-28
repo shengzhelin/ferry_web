@@ -165,7 +165,7 @@ export default {
         content: ''
       },
       contentOptions: {
-        flattenSpans: false, // 默認情況下，CodeMirror會將使用相同class的兩個span合並成一個。通過設置此項為false禁用此功能
+        flattenSpans: false, // 默認情況下，CodeMirror會將使用相同class的兩個span合併成一個。通過設置此項為false禁用此功能
         matchBrackets: true, // 匹配符號
         lineWiseCopyCut: true, // 如果在覆制或剪切時沒有選擇文本，那麽就會自動操作光標所在的整行
         tabSize: 4,

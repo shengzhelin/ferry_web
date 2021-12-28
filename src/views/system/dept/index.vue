@@ -192,7 +192,7 @@ export default {
           { required: true, message: '部門負責人不能為空', trigger: 'blur' }
         ],
         sort: [
-          { required: true, message: '菜單順序不能為空', trigger: 'blur' }
+          { required: true, message: '選單順序不能為空', trigger: 'blur' }
         ],
         email: [
           {
@@ -203,7 +203,7 @@ export default {
         ],
         phone: [
           {
-            pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
+            pattern: /^0[9][0-9]\d{7}$/,
             message: '請輸入正確的手機號碼',
             trigger: 'blur'
           }

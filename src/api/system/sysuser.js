@@ -85,7 +85,7 @@ export function changeUserStatus(userId, status) {
   })
 }
 
-// 查詢用戶個人信息
+// 查詢用戶個人訊息
 export function getUserProfile() {
   return request({
     url: '/api/v1/user/profile',
@@ -93,7 +93,7 @@ export function getUserProfile() {
   })
 }
 
-// 修改用戶個人信息
+// 修改用戶個人訊息
 export function updateUserProfile(data) {
   return request({
     url: '/api/v1/sysUser/profile',

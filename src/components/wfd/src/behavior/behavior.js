@@ -78,7 +78,7 @@ Behavior.registerBehavior = function(type, behavior) {
       return this
     },
     /**
-     * 定義自定義行為的默認參數，會與用戶傳入的參數進行合並
+     * 定義自定義行為的默認參數，會與用戶傳入的參數進行合併
      */
     getDefaultCfg() {}
   }, behavior)

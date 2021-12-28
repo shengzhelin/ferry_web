@@ -48,7 +48,7 @@ export default {
         phone: [
           { required: true, message: '手機號碼不能為空', trigger: 'blur' },
           {
-            pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
+            pattern: /^0[9][0-9]\d{7}$/,
             message: '請輸入正確的手機號碼',
             trigger: 'blur'
           }

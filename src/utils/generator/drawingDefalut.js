@@ -19,7 +19,7 @@ export default [
     'show-word-limit': true,
     readonly: false,
     disabled: false,
-    required: false,
+    required: true,
     changeTag: true,
     regList: [{
       pattern: '/^0(9)\\d{8}$/',

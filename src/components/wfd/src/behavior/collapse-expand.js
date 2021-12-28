@@ -25,7 +25,7 @@ module.exports = {
   },
   onNodeClick(e) {
     const item = e.item
-    // 如果節點進行過更新，model 會進行 merge，直接改 model 就不能改布局，所以需要去改源數據
+    // 如果節點進行過更新，model 會進行 merge，直接改 model 就不能改佈局，所以需要去改源數據
     const sourceData = this.graph.findDataById(item.get('id'))
     const children = sourceData.children
     // 葉子節點的收縮和展開沒有意義

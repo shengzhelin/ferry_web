@@ -262,7 +262,7 @@ module.exports = {
   /**
    * 計算delegate位置，包括左上角左邊及寬度和高度
    * @memberof ItemGroup
-   * @return {object} 計算出來的delegate坐標信息及寬高
+   * @return {object} 計算出來的delegate坐標訊息及寬高
    */
   calculationGroupPosition() {
     const graph = this.graph

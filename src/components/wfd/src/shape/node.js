@@ -8,7 +8,7 @@ const Util = require('../util/index')
 const Global = require('../global')
 const SingleShapeMixin = require('./single-shape-mixin')
 
-// 注冊 Node 的工廠方法
+// 註冊 Node 的工廠方法
 Shape.registerFactory('node', {
   defaultShapeType: 'circle'
 })

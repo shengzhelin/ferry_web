@@ -232,7 +232,7 @@ export default {
       const oldIndex = $event.oldIndex
       const item = $event.item
 
-      // 防止布局元素的嵌套拖拽
+      // 防止佈局元素的嵌套拖拽
       if (item.className.indexOf('data-grid') >= 0) {
         // 如果是列表中拖拽的元素需要還原到原來位置
         item.tagName === 'DIV' && this.data.list.splice(oldIndex, 0, row.columns[colIndex].list[newIndex])

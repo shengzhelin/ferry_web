@@ -132,8 +132,8 @@ import {
 
 // 代碼編輯器
 import { codemirror } from 'vue-codemirror'
-require('codemirror/mode/python/python') // 這里引入的模式的js，根據設置的mode引入，一定要引入！！
-require('codemirror/mode/shell/shell') // 這里引入的模式的js，根據設置的mode引入，一定要引入！！
+require('codemirror/mode/python/python') // 這裡引入的模式的js，根據設置的mode引入，一定要引入！！
+require('codemirror/mode/shell/shell') // 這裡引入的模式的js，根據設置的mode引入，一定要引入！！
 
 export default {
   name: 'Task',

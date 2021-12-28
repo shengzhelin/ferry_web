@@ -158,7 +158,7 @@ class Item {
       return
     }
     self.updatePosition(model)
-    const cfg = self.getShapeCfg(model) // 可能會附加額外信息
+    const cfg = self.getShapeCfg(model) // 可能會附加額外訊息
     const shapeType = cfg.shape
     const keyShape = shapeFactory.draw(shapeType, cfg, group)
     if (keyShape) {
@@ -215,7 +215,7 @@ class Item {
     const globalStyle = Global[self.getType() + GLOBAL_STATE_STYLE_SUFFIX][state]
     const styles = this.get('styles')
     const defaultStyle = styles && styles[state]
-    // 狀態名 + style（activeStyle) 存儲在 item 中，如果 item 中不存在這些信息，則使用默認的樣式
+    // 狀態名 + style（activeStyle) 存儲在 item 中，如果 item 中不存在這些訊息，則使用默認的樣式
     const fieldName = state + NAME_STYLE
     return Util.mix({}, globalStyle, defaultStyle, self.get(fieldName))
   }
@@ -360,7 +360,7 @@ class Item {
   /**
    * 將更新應用到 model 上，刷新屬性
    * @internal 僅提供給 Graph 使用，外部直接調用 graph.update 接口
-   * @param  {Object} cfg       配置項，可以是增量信息
+   * @param  {Object} cfg       配置項，可以是增量訊息
    */
   update(cfg) {
     const model = this.get('model')
@@ -390,7 +390,7 @@ class Item {
     const model = this.get('model')
     const shape = model.shape
     // 判定是否允許更新
-    // 1. 注冊的節點允許更新
+    // 1. 註冊的節點允許更新
     // 2. 更新後的 shape 等於原先的 shape
     if (shapeFactory.shouldUpdate(shape) && shape === this.get('currentShape')) {
       const updateCfg = this.getShapeCfg(model)

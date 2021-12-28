@@ -2,7 +2,7 @@
   <div class="app-container">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>配置信息</span>
+        <span>配置訊息</span>
       </div>
       <div class="text item">
         <el-form ref="ruleForm" :model="ruleForm" :rules="rules" label-width="120px">
@@ -22,7 +22,7 @@
               <i v-else class="el-icon-plus avatar-uploader-icon" />
             </el-upload>
           </el-form-item>
-          <el-form-item label="默認LDAP登陸：">
+          <el-form-item label="默認LDAP登入：">
             <el-radio v-model="ruleForm.is_ldap" :label="true">是</el-radio>
             <el-radio v-model="ruleForm.is_ldap" :label="false">否</el-radio>
           </el-form-item>
@@ -38,7 +38,7 @@
       </div>
       <div class="text item">
         <el-alert
-          title="Ldap登陸驗證通過後，會將用戶同步至本地數據庫中，請在此配置數據同步的映射關系。單擊Ldap字段可編輯，雙擊可隱藏編輯。"
+          title="Ldap登入驗證通過後，會將用戶同步至本地數據庫中，請在此配置數據同步的映射關系。單擊Ldap字段可編輯，雙擊可隱藏編輯。"
           type="info"
           style="margin-bottom: 10px"
         />
@@ -54,7 +54,7 @@
           />
           <el-table-column
             prop="local_field_nick"
-            label="字段昵稱"
+            label="字段暱稱"
             width="150"
           />
           <el-table-column
@@ -134,7 +134,7 @@ export default {
         }
       })
     },
-    // 提交配置信息
+    // 提交配置訊息
     submitForm(formName, classify) {
       var requestStatus = false
       var jsonValue = {

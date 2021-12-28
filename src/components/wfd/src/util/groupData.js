@@ -103,7 +103,7 @@ module.exports = {
       const nodeInParentGroup = groupById[parentId]
 
       if (nodeInParentGroup && subGroupIds) {
-        // 合並
+        // 合併
         const parentGroupNodes = [...subGroupIds, ...nodeInParentGroup]
         result[parentId] = parentGroupNodes
       } else if (subGroupIds) {

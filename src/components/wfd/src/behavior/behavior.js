@@ -2,7 +2,7 @@ const Util = require('../util')
 const Behavior = {}
 
 /**
- * 注冊行為的方法
+ * 註冊行為的方法
  * @param {string} type 行為類型，外部引用指定必須，不要與已有行為類型重名
  * @param {object} behavior 行為內容,包含元素詳見augment內容
  */

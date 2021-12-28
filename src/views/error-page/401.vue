@@ -10,7 +10,7 @@
         </h1>
         gif來源<a href="https://zh.airbnb.com/" target="_blank">airbnb</a> 頁面
         <h2>你沒有權限去該頁面</h2>
-        <h6>如有不滿請聯系你領導</h6>
+        <h6>如有不滿請聯繫你領導</h6>
         <ul class="list-unstyled">
           <li>或者你可以去:</li>
           <li class="link-type">

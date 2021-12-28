@@ -37,25 +37,25 @@ function getIndexById(array, id) {
 }
 
 /**
- * 隨機布局
+ * 隨機佈局
  */
 Layout.registerLayout('radial', {
   getDefaultCfg() {
     return {
-      center: [0, 0], // 布局中心
-      maxIteration: 1000, // 停止叠代的最大叠代數
+      center: [0, 0], // 佈局中心
+      maxIteration: 1000, // 停止疊代的最大疊代數
       focusNode: null, // 中心點，默認為數據中第一個點
       unitRadius: null, // 每一圈半徑
       linkDistance: 50, // 默認邊長度
       preventOverlap: false, // 是否防止重疊
       nodeSize: undefined, // 節點直徑
       nodeSpacing: undefined, // 節點間距，防止節點重疊時節點之間的最小距離（兩節點邊緣最短距離）
-      strictRadial: true, // 是否必須是嚴格的 radial 布局，即每一層的節點嚴格布局在一個環上。preventOverlap 為 true 時生效。
-      maxPreventOverlapIteration: 200 // 防止重疊步驟的最大叠代次數
+      strictRadial: true, // 是否必須是嚴格的 radial 佈局，即每一層的節點嚴格佈局在一個環上。preventOverlap 為 true 時生效。
+      maxPreventOverlapIteration: 200 // 防止重疊步驟的最大疊代次數
     }
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

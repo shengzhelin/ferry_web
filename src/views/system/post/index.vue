@@ -2,19 +2,19 @@
   <div class="app-container">
     <el-card class="box-card">
       <el-form ref="queryForm" :model="queryParams" :inline="true" label-width="68px">
-        <el-form-item label="崗位編碼" prop="postCode">
+        <el-form-item label="職稱編碼" prop="postCode">
           <el-input
             v-model="queryParams.postCode"
-            placeholder="請輸入崗位編碼"
+            placeholder="請輸入職稱編碼"
             clearable
             size="small"
             @keyup.enter.native="handleQuery"
           />
         </el-form-item>
-        <el-form-item label="崗位名稱" prop="postName">
+        <el-form-item label="職稱名稱" prop="postName">
           <el-input
             v-model="queryParams.postName"
-            placeholder="請輸入崗位名稱"
+            placeholder="請輸入職稱名稱"
             clearable
             size="small"
             @keyup.enter.native="handleQuery"
@@ -69,10 +69,10 @@
 
       <el-table v-loading="loading" border :data="postList" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" align="center" />
-        <el-table-column label="崗位編號" width="80" align="center" prop="postId" />
-        <el-table-column label="崗位編碼" align="center" prop="postCode" />
-        <el-table-column label="崗位名稱" align="center" prop="postName" />
-        <el-table-column label="崗位排序" align="center" prop="sort" />
+        <el-table-column label="職稱編號" width="80" align="center" prop="postId" />
+        <el-table-column label="職稱編碼" align="center" prop="postCode" />
+        <el-table-column label="職稱名稱" align="center" prop="postName" />
+        <el-table-column label="職稱排序" align="center" prop="sort" />
         <el-table-column label="狀態" align="center" prop="status">
           <template slot-scope="scope">
             <el-tag
@@ -114,19 +114,19 @@
         @pagination="getList"
       />
     </el-card>
-    <!-- 添加或修改崗位對話框 -->
+    <!-- 添加或修改職稱對話框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px">
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="崗位名稱" prop="postName">
-          <el-input v-model="form.postName" placeholder="請輸入崗位名稱" />
+        <el-form-item label="職稱名稱" prop="postName">
+          <el-input v-model="form.postName" placeholder="請輸入職稱名稱" />
         </el-form-item>
-        <el-form-item label="崗位編碼" prop="postCode">
+        <el-form-item label="職稱編碼" prop="postCode">
           <el-input v-model="form.postCode" placeholder="請輸入編碼名稱" />
         </el-form-item>
-        <el-form-item label="崗位順序" prop="sort">
+        <el-form-item label="職稱順序" prop="sort">
           <el-input-number v-model="form.sort" controls-position="right" :min="0" />
         </el-form-item>
-        <el-form-item label="備注" prop="remark">
+        <el-form-item label="備註" prop="remark">
           <el-input v-model="form.remark" type="textarea" placeholder="請輸入內容" />
         </el-form-item>
       </el-form>
@@ -156,7 +156,7 @@ export default {
       multiple: true,
       // 總條數
       total: 0,
-      // 崗位表格數據
+      // 職稱表格數據
       postList: [],
       // 彈出層標題
       title: '',
@@ -175,13 +175,13 @@ export default {
       // 表單校驗
       rules: {
         postName: [
-          { required: true, message: '崗位名稱不能為空', trigger: 'blur' }
+          { required: true, message: '職稱名稱不能為空', trigger: 'blur' }
         ],
         postCode: [
-          { required: true, message: '崗位編碼不能為空', trigger: 'blur' }
+          { required: true, message: '職稱編碼不能為空', trigger: 'blur' }
         ],
         sort: [
-          { required: true, message: '崗位順序不能為空', trigger: 'blur' }
+          { required: true, message: '職稱順序不能為空', trigger: 'blur' }
         ]
       }
     }
@@ -190,7 +190,7 @@ export default {
     this.getList()
   },
   methods: {
-    /** 查詢崗位列表 */
+    /** 查詢職稱列表 */
     getList() {
       this.loading = true
       listPost(this.queryParams).then(response => {
@@ -236,7 +236,7 @@ export default {
     handleAdd() {
       this.reset()
       this.open = true
-      this.title = '添加崗位'
+      this.title = '添加職稱'
     },
     /** 修改按鈕操作 */
     handleUpdate(row) {
@@ -246,7 +246,7 @@ export default {
       getPost(postId).then(response => {
         this.form = response.data
         this.open = true
-        this.title = '修改崗位'
+        this.title = '修改職稱'
       })
     },
     /** 提交按鈕 */
@@ -280,7 +280,7 @@ export default {
     /** 刪除按鈕操作 */
     handleDelete(row) {
       const postIds = row.postId || this.ids
-      this.$confirm('是否確認刪除崗位編號為"' + postIds + '"的數據項?', '警告', {
+      this.$confirm('是否確認刪除職稱編號為"' + postIds + '"的數據項?', '警告', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'warning'
@@ -294,21 +294,21 @@ export default {
     /** 導出按鈕操作 */
     handleExport() {
       // const queryParams = this.queryParams
-      this.$confirm('是否確認導出所有崗位數據項?', '警告', {
+      this.$confirm('是否確認導出所有職稱數據項?', '警告', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
         this.downloadLoading = true
       import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = ['崗位編號', '崗位編碼', '崗位名稱', '排序', '創建時間']
+        const tHeader = ['職稱編號', '職稱編碼', '職稱名稱', '排序', '創建時間']
         const filterVal = ['postId', 'postCode', 'postName', 'sort', 'create_time']
         const list = this.postList
         const data = formatJson(filterVal, list)
         excel.export_json_to_excel({
           header: tHeader,
           data,
-          filename: '崗位管理',
+          filename: '職稱管理',
           autoWidth: true, // Optional
           bookType: 'xlsx' // Optional
         })

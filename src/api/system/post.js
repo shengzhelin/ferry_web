@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查詢崗位列表
+// 查詢職稱列表
 export function listPost(query) {
   return request({
     url: '/api/v1/postlist',
@@ -9,7 +9,7 @@ export function listPost(query) {
   })
 }
 
-// 查詢崗位詳細
+// 查詢職稱詳細
 export function getPost(postId) {
   return request({
     url: '/api/v1/post/' + postId,
@@ -17,7 +17,7 @@ export function getPost(postId) {
   })
 }
 
-// 新增崗位
+// 新增職稱
 export function addPost(data) {
   return request({
     url: '/api/v1/post',
@@ -26,7 +26,7 @@ export function addPost(data) {
   })
 }
 
-// 修改崗位
+// 修改職稱
 export function updatePost(data) {
   return request({
     url: '/api/v1/post',
@@ -35,7 +35,7 @@ export function updatePost(data) {
   })
 }
 
-// 刪除崗位
+// 刪除職稱
 export function delPost(postId) {
   return request({
     url: '/api/v1/post/' + postId,

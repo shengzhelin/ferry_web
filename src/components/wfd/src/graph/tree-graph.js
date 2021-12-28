@@ -89,7 +89,7 @@ class TreeGraph extends Graph {
       }
       self.addItem('edge', { source: parent, target: node, id: parent.get('id') + ':' + node.get('id') })
     }
-    // 渲染到視圖上應參考布局的children, 避免多繪制了收起的節點
+    // 渲染到視圖上應參考佈局的children, 避免多繪制了收起的節點
     Util.each(data.children, child => {
       self._addChild(child, node, animate)
     })
@@ -251,8 +251,8 @@ class TreeGraph extends Graph {
     return result
   }
   /**
-   * 更改並應用樹布局算法
-   * @param {object} layout 布局算法
+   * 更改並應用樹佈局算法
+   * @param {object} layout 佈局算法
    */
   changeLayout(layout) {
     const self = this
@@ -266,8 +266,8 @@ class TreeGraph extends Graph {
   }
 
   /**
-   * 根據目前的 data 刷新布局，更新到畫布上。用於變更數據之後刷新視圖。
-   * @param {boolean} fitView 更新布局時是否需要適應窗口
+   * 根據目前的 data 刷新佈局，更新到畫布上。用於變更數據之後刷新視圖。
+   * @param {boolean} fitView 更新佈局時是否需要適應窗口
    */
   refreshLayout(fitView) {
     const self = this
@@ -292,7 +292,7 @@ class TreeGraph extends Graph {
     self.emit('afterrefreshlayout', { data, layoutData })
   }
   /**
-   * 布局動畫接口，用於數據更新時做節點位置更新的動畫
+   * 佈局動畫接口，用於數據更新時做節點位置更新的動畫
    * @param {object} data 更新的數據
    * @param {function} onFrame 定義節點位置更新時如何移動
    * @param {number} duration 動畫時間
@@ -362,7 +362,7 @@ class TreeGraph extends Graph {
     }, animateCfg.delay)
   }
   /**
-   * 立即停止布局動畫
+   * 立即停止佈局動畫
    */
   stopLayoutAnimate() {
     this.get('canvas').stopAnimate()
@@ -371,8 +371,8 @@ class TreeGraph extends Graph {
   }
 
   /**
-   * 是否在布局動畫
-   * @return {boolean} 是否有布局動畫
+   * 是否在佈局動畫
+   * @return {boolean} 是否有佈局動畫
    */
   isLayoutAnimating() {
     return this.layoutAnimating

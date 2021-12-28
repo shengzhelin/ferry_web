@@ -2,7 +2,7 @@
   <div class="app-container">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>公共信息</span>
+        <span>公共訊息</span>
       </div>
       <div class="text item">
         <el-form ref="ruleForm" :model="ruleForm" :rules="rules" label-width="100px">
@@ -22,7 +22,7 @@
 
     <el-card class="box-card" style="margin-top: 10px">
       <div slot="header" class="clearfix">
-        <span>表單信息</span>
+        <span>表單訊息</span>
       </div>
       <div class="text item">
         <template v-for="(tplItem, tplIndex) in processStructureValue.tpls">

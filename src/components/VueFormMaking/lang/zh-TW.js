@@ -22,8 +22,8 @@ export default {
         cascader: '級聯選擇器',
         table: '子表單',
         subform: '子表單',
-        grid: '柵格布局',
-        tabs: '標簽頁',
+        grid: '柵格佈局',
+        tabs: '標籤頁',
         divider: '分割線',
         file: '文件'
       },
@@ -34,7 +34,7 @@ export default {
         title: '高級字段'
       },
       layout: {
-        title: '布局字段'
+        title: '佈局字段'
       }
     },
     description: {
@@ -60,7 +60,7 @@ export default {
       confirm: '確 定',
       addOption: '添加選項',
       addColumn: '添加列',
-      addTab: '添加標簽',
+      addTab: '添加標籤',
       upload: '點擊上傳',
       add: '添加'
     },
@@ -68,12 +68,12 @@ export default {
       form: {
         title: '表單屬性',
         labelPosition: {
-          title: '標簽對齊方式',
+          title: '標籤對齊方式',
           left: '左對齊',
           right: '右對齊',
           top: '頂部對齊'
         },
-        labelWidth: '表單標簽寬度',
+        labelWidth: '表單標籤寬度',
         size: '組件尺寸',
         customClass: '自定義Class'
       },
@@ -84,10 +84,10 @@ export default {
         width: '寬度',
         height: '高度',
         size: '大小',
-        labelWidth: '標簽寬度',
+        labelWidth: '標籤寬度',
         custom: '自定義',
         placeholder: '占位內容',
-        layout: '布局方式',
+        layout: '佈局方式',
         block: '塊級',
         inline: '行內',
         contentPosition: '文案位置',
@@ -100,13 +100,13 @@ export default {
         filterable: '是否可搜索',
         allowHalf: '允許半選',
         showAlpha: '支持透明度選擇',
-        showLabel: '是否顯示標簽',
+        showLabel: '是否顯示標籤',
         option: '選項',
         staticData: '靜態數據',
         remoteData: '遠端數據',
         remoteFunc: '遠端方法',
         value: '值',
-        label: '標簽',
+        label: '標籤',
         childrenOption: '子選項',
         defaultValue: '默認值',
         showType: '顯示類型',
@@ -155,8 +155,8 @@ export default {
         left: '左側',
         right: '右側',
         bottom: '底部',
-        tabOption: '標簽配置項',
-        tabName: '標簽名稱',
+        tabOption: '標籤配置項',
+        tabName: '標籤名稱',
         customClass: '自定義Class',
         attribute: '操作屬性',
         dataBind: '數據綁定',
@@ -173,7 +173,7 @@ export default {
         required: '必填',
         patternPlaceholder: '填寫正則表達式',
         newOption: '新選項',
-        tab: '標簽頁',
+        tab: '標籤頁',
         validatorRequired: '必須填寫',
         validatorType: '格式不正確',
         validatorPattern: '格式不匹配',

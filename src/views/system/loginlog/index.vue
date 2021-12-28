@@ -2,10 +2,10 @@
   <div class="app-container">
     <el-card class="box-card">
       <el-form ref="queryForm" :model="queryParams" :inline="true" label-width="68px">
-        <el-form-item label="登錄地址">
+        <el-form-item label="登入地址">
           <el-input
             v-model="queryParams.ipaddr"
-            placeholder="請輸入登錄地址"
+            placeholder="請輸入登入地址"
             clearable
             style="width: 240px;"
             size="small"
@@ -64,12 +64,12 @@
         <el-table-column type="selection" width="55" align="center" />
         <el-table-column label="編號" width="100" align="center" prop="infoId" />
         <el-table-column label="用戶名稱" width="150" align="center" prop="username" />
-        <el-table-column label="登錄地址" align="center" prop="ipaddr" width="130" :show-overflow-tooltip="true" />
-        <el-table-column label="登錄地點" align="center" prop="loginLocation" />
+        <el-table-column label="登入地址" align="center" prop="ipaddr" width="130" :show-overflow-tooltip="true" />
+        <el-table-column label="登入地點" align="center" prop="loginLocation" />
         <el-table-column label="瀏覽器" align="center" prop="browser" />
         <el-table-column label="操作系統" align="center" prop="os" />
-        <el-table-column label="操作信息" width="120" align="center" prop="msg" />
-        <el-table-column label="登錄日期" align="center" prop="loginTime" width="180">
+        <el-table-column label="操作訊息" width="120" align="center" prop="msg" />
+        <el-table-column label="登入日期" align="center" prop="loginTime" width="180">
           <template slot-scope="scope">
             <span>{{ parseTime(scope.row.loginTime) }}</span>
           </template>
@@ -121,7 +121,7 @@ export default {
     this.getList()
   },
   methods: {
-    /** 查詢登錄日志列表 */
+    /** 查詢登入日誌列表 */
     getList() {
       this.loading = true
       list(this.addDateRange(this.queryParams, this.dateRange)).then(response => {
@@ -163,7 +163,7 @@ export default {
     },
     /** 清空按鈕操作 */
     handleClean() {
-      this.$confirm('是否確認清空所有登錄日志數據項?', '警告', {
+      this.$confirm('是否確認清空所有登入日誌數據項?', '警告', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'warning'
@@ -179,21 +179,21 @@ export default {
     /** 導出按鈕操作 */
     handleExport() {
       // const queryParams = this.queryParams
-      this.$confirm('是否確認導出所有操作日志數據項?', '警告', {
+      this.$confirm('是否確認導出所有操作日誌數據項?', '警告', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
         this.downloadLoading = true
         import('@/vendor/Export2Excel').then(excel => {
-          const tHeader = ['編號', '用戶名稱', '登陸地址', '登陸地點', '瀏覽器', '操作系統', '登陸狀態', '操作信息', '登陸日期']
+          const tHeader = ['編號', '用戶名稱', '登入地址', '登入地點', '瀏覽器', '操作系統', '登入狀態', '操作訊息', '登入日期']
           const filterVal = ['infoId', 'username', 'ipaddr', 'loginLocation', 'browser', 'os', 'status', 'msg', 'loginTime']
           const list = this.list
           const data = formatJson(filterVal, list)
           excel.export_json_to_excel({
             header: tHeader,
             data,
-            filename: '登陸日志',
+            filename: '登入日誌',
             autoWidth: true, // Optional
             bookType: 'xlsx' // Optional
           })

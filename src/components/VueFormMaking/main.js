@@ -8,7 +8,7 @@ import VueEditor from 'vue2-editor'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import enLocale from 'element-ui/lib/locale/lang/en'
-import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
+import zhLocale from 'element-ui/lib/locale/lang/zh-TW'
 
 Vue.use(VueI18n)
 Vue.use(VueEditor)
@@ -22,7 +22,7 @@ const messages = {
       advanced: 'Advanced'
     }
   },
-  'zh-CN': {
+  'zh-TW': {
     header: {
       title: '表單設計器',
       document: '使用文檔',
@@ -33,8 +33,8 @@ const messages = {
 }
 
 Vue.locale('en-US', { ...enLocale, ...messages['en-US'] })
-Vue.locale('zh-CN', { ...zhLocale, ...messages['zh-CN'] })
-Vue.config.lang = 'zh-CN'
+Vue.locale('zh-TW', { ...zhLocale, ...messages['zh-TW'] })
+Vue.config.lang = 'zh-TW'
 
 Vue.use(ElementUI, { size: 'small' })
 

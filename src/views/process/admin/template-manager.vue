@@ -64,7 +64,7 @@
               type="text"
               icon="el-icon-receiving"
               @click="handleClone(scope.row)"
-            >克隆</el-button>
+            >複製</el-button>
             <el-button
               v-permisaction="['process:admin:template:edit']"
               size="mini"
@@ -97,7 +97,7 @@
             <el-form-item label="名稱" prop="name">
               <el-input v-model="ruleForm.name" />
             </el-form-item>
-            <el-form-item label="備注">
+            <el-form-item label="備註">
               <el-input v-model="ruleForm.remarks" type="textarea" />
             </el-form-item>
             <el-form-item label="模版" prop="form_structure">
@@ -299,7 +299,7 @@ export default {
       }
     },
     handleClone(row) {
-      this.$confirm(`確認克隆模版 < ${row.name} > ?`, '提示', {
+      this.$confirm(`確認複製模版 < ${row.name} > ?`, '提示', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'info'
@@ -308,7 +308,7 @@ export default {
           this.getList()
           this.$message({
             type: 'success',
-            message: '模版已克隆!'
+            message: '模版已複製!'
           })
         })
       }).catch(() => {

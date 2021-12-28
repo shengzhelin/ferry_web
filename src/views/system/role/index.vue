@@ -142,7 +142,7 @@
           <el-form-item label="角色順序" prop="roleSort">
             <el-input-number v-model="form.roleSort" controls-position="right" :min="0" />
           </el-form-item>
-          <el-form-item label="菜單權限">
+          <el-form-item label="選單權限">
             <el-tree
               ref="menu"
               :data="menuOptions"
@@ -152,7 +152,7 @@
               :props="defaultProps"
             />
           </el-form-item>
-          <el-form-item label="備注">
+          <el-form-item label="備註">
             <el-input v-model="form.remark" type="textarea" placeholder="請輸入內容" />
           </el-form-item>
         </el-form>
@@ -256,7 +256,7 @@ export default {
           label: '僅本人數據權限'
         }
       ],
-      // 菜單列表
+      // 選單列表
       menuOptions: [],
       // 部門列表
       deptOptions: [],
@@ -303,7 +303,7 @@ export default {
         }
       )
     },
-    /** 查詢菜單樹結構 */
+    /** 查詢選單樹結構 */
     getMenuTreeselect() {
       menuTreeselect().then(response => {
         this.menuOptions = response.data
@@ -315,11 +315,11 @@ export default {
         this.deptOptions = response.data.list
       })
     },
-    // 所有菜單節點數據
+    // 所有選單節點數據
     getMenuAllCheckedKeys() {
-      // 目前被選中的菜單節點
+      // 目前被選中的選單節點
       const checkedKeys = this.$refs.menu.getHalfCheckedKeys()
-      // 半選中的菜單節點
+      // 半選中的選單節點
       const halfCheckedKeys = this.$refs.menu.getCheckedKeys()
       checkedKeys.unshift.apply(checkedKeys, halfCheckedKeys)
       return checkedKeys
@@ -333,7 +333,7 @@ export default {
       // checkedKeys.unshift.apply(checkedKeys, halfCheckedKeys)
       return checkedKeys
     },
-    /** 根據角色ID查詢菜單樹結構 */
+    /** 根據角色ID查詢選單樹結構 */
     getRoleMenuTreeselect(roleId) {
       roleMenuTreeselect(roleId).then(response => {
         this.menuOptions = response.menus

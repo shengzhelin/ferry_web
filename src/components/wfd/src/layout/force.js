@@ -14,7 +14,7 @@ const layoutConst = require('./worker/layoutConst')
 const { LAYOUT_MESSAGE } = layoutConst
 
 /**
- * 經典力導布局 force-directed
+ * 經典力導佈局 force-directed
  */
 Layout.registerLayout('force', {
   getDefaultCfg() {
@@ -27,14 +27,14 @@ Layout.registerLayout('force', {
       edgeStrength: null, // 邊的作用力, 默認為根據節點的入度出度自適應
       linkDistance: 50, // 默認邊長度
       forceSimulation: null, // 自定義 force 方法
-      alphaDecay: 0.028, // 叠代閾值的衰減率 [0, 1]，0.028 對應最大叠代數為 300
-      alphaMin: 0.001, // 停止叠代的閾值
+      alphaDecay: 0.028, // 疊代閾值的衰減率 [0, 1]，0.028 對應最大疊代數為 300
+      alphaMin: 0.001, // 停止疊代的閾值
       alpha: 0.3, // 當前閾值
       collideStrength: 1, // 防止重疊的力強度
       tick() {},
-      onLayoutEnd() {}, // 布局完成回調
-      onTick() {}, // 每一叠代布局回調
-      // 是否啟用web worker。前提是在web worker里執行布局，否則無效
+      onLayoutEnd() {}, // 佈局完成回調
+      onTick() {}, // 每一疊代佈局回調
+      // 是否啟用web worker。前提是在web worker裡執行佈局，否則無效
       workerEnabled: false
     }
   },
@@ -49,13 +49,13 @@ Layout.registerLayout('force', {
     self.ticking = false
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this
     const nodes = self.nodes
     const edges = self.edges
-    // 如果正在布局，忽略布局請求
+    // 如果正在佈局，忽略佈局請求
     if (self.ticking) {
       return
     }
@@ -102,7 +102,7 @@ Layout.registerLayout('force', {
         }
 
         if (self.workerEnabled && !isInWorker()) {
-          // 如果不是運行在web worker里，不用web worker布局
+          // 如果不是運行在web worker裡，不用web worker佈局
           self.workerEnabled = false
           console.warn('workerEnabled option is only supported when running in web worker.')
         }
@@ -196,7 +196,7 @@ Layout.registerLayout('force', {
     simulation.force('collisionForce', d3Force.forceCollide(nodeSizeFunc).strength(collideStrength))
   },
   /**
-   * 更新布局配置，但不執行布局
+   * 更新佈局配置，但不執行佈局
    * @param {object} cfg 需要更新的配置項
    */
   updateCfg(cfg) {
@@ -231,7 +231,7 @@ function getSimulationTicks(simulation) {
   return totalTicks
 }
 
-// 判斷是否運行在web worker里
+// 判斷是否運行在web worker裡
 function isInWorker() {
   // eslint-disable-next-line no-undef
   return typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope

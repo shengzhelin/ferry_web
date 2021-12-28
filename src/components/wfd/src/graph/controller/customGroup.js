@@ -110,7 +110,7 @@ class CustomGroup {
     // 只有手動創建group時執行以下邏輯
     if (updateDataModel) {
       const groups = graph.get('groups')
-      // 如果是手動創建group，則原始數據中是沒有groupId信息的，需要將groupId添加到node中
+      // 如果是手動創建group，則原始數據中是沒有groupId訊息的，需要將groupId添加到node中
       nodes.forEach(nodeId => {
         const node = graph.findById(nodeId)
         const model = node.getModel()

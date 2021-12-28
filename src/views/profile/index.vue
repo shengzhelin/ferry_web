@@ -4,7 +4,7 @@
       <el-col :span="6" :xs="24">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-            <span>個人信息</span>
+            <span>個人訊息</span>
           </div>
           <div>
             <div class="text-center">
@@ -20,7 +20,7 @@
                 <div class="pull-right">{{ user.phone }}</div>
               </li>
               <li class="list-group-item">
-                <svg-icon icon-class="email" /> 用戶郵箱
+                <svg-icon icon-class="email" /> 用戶信箱
                 <div class="pull-right">{{ user.email }}</div>
               </li>
               <li class="list-group-item">

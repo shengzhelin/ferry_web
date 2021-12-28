@@ -2,7 +2,7 @@ const Numeric = require('numericjs')
 class MDS {
 //   getDefaultCfgs() {
 //     return {
-//       distances: null,         // 停止叠代的最大叠代數
+//       distances: null,         // 停止疊代的最大疊代數
 //       demension: 2             // 中心點，默認為數據中第一個點
 //     };
 //   }

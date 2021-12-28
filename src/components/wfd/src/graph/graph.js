@@ -52,7 +52,7 @@ class Graph extends EventEmitter {
        */
       mode: [],
       /**
-       * 注冊插件
+       * 註冊插件
        */
       plugins: [],
       /**
@@ -1153,10 +1153,10 @@ class Graph extends EventEmitter {
   }
 
   /**
-   * 更換布局配置項
-   * @param {object} cfg 新布局配置項
-   * 若 cfg 含有 type 字段或為 String 類型，且與現有布局方法不同，則更換布局
-   * 若 cfg 不包括 type ，則保持原有布局方法，僅更新布局配置項
+   * 更換佈局配置項
+   * @param {object} cfg 新佈局配置項
+   * 若 cfg 含有 type 字段或為 String 類型，且與現有佈局方法不同，則更換佈局
+   * 若 cfg 不包括 type ，則保持原有佈局方法，僅更新佈局配置項
    */
   updateLayout(cfg) {
     const layoutController = this.get('layoutController')
@@ -1185,14 +1185,14 @@ class Graph extends EventEmitter {
   }
 
   /**
-   * 重新以當前示例中配置的屬性進行一次布局
+   * 重新以當前示例中配置的屬性進行一次佈局
    */
   layout() {
     const layoutController = this.get('layoutController')
     const layoutCfg = this.get('layout')
 
     if (layoutCfg.workerEnabled) {
-      // 如果使用web worker布局
+      // 如果使用web worker佈局
       layoutController.layout()
       return
     }

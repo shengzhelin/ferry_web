@@ -54,7 +54,7 @@ export function classifyProcessList(params) {
   })
 }
 
-// 克隆流程
+// 複製流程
 export function cloneProcess(id) {
   return request({
     url: `/api/v1/process/clone/${id}`,

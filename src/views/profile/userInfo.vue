@@ -1,12 +1,12 @@
 <template>
   <el-form ref="form" :model="user" :rules="rules" label-width="80px">
-    <el-form-item label="用戶昵稱" prop="nickName">
+    <el-form-item label="用戶暱稱" prop="nickName">
       <el-input v-model="user.nickName" />
     </el-form-item>
     <el-form-item label="手機號碼" prop="phone">
       <el-input v-model="user.phone" maxlength="11" />
     </el-form-item>
-    <el-form-item label="郵箱" prop="email">
+    <el-form-item label="信箱" prop="email">
       <el-input v-model="user.email" maxlength="50" />
     </el-form-item>
     <el-form-item label="性別">
@@ -35,13 +35,13 @@ export default {
       // 表單校驗
       rules: {
         nickName: [
-          { required: true, message: '用戶昵稱不能為空', trigger: 'blur' }
+          { required: true, message: '用戶暱稱不能為空', trigger: 'blur' }
         ],
         email: [
-          { required: true, message: '郵箱地址不能為空', trigger: 'blur' },
+          { required: true, message: '信箱地址不能為空', trigger: 'blur' },
           {
             type: 'email',
-            message: "'請輸入正確的郵箱地址",
+            message: "'請輸入正確的信箱地址",
             trigger: ['blur', 'change']
           }
         ],

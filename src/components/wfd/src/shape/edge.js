@@ -21,7 +21,7 @@ function revertAlign(labelPosition) {
   return textAlign
 }
 
-// 注冊 Edge 的工廠方法
+// 註冊 Edge 的工廠方法
 Shape.registerFactory('edge', {
   defaultShapeType: 'line'
 })

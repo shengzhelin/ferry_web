@@ -2,11 +2,11 @@ export default [
   {
     layout: 'colFormItem',
     tagIcon: 'input',
-    label: '手機號',
+    label: '手機號碼',
     vModel: 'mobile',
     formId: 6,
     tag: 'el-input',
-    placeholder: '請輸入手機號',
+    placeholder: '請輸入手機號碼',
     defaultValue: '',
     span: 24,
     style: { width: '100%' },
@@ -15,15 +15,15 @@ export default [
     append: '',
     'prefix-icon': 'el-icon-mobile',
     'suffix-icon': '',
-    maxlength: 11,
+    maxlength: 10,
     'show-word-limit': true,
     readonly: false,
     disabled: false,
-    required: true,
+    required: false,
     changeTag: true,
     regList: [{
-      pattern: '/^1(3|4|5|7|8|9)\\d{9}$/',
-      message: '手機號格式錯誤'
+      pattern: '/^0(9)\\d{8}$/',
+      message: '手機號碼格式錯誤'
     }]
   }
 ]

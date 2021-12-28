@@ -2,10 +2,10 @@
   <div class="app-container">
     <el-card class="box-card">
       <el-form :inline="true">
-        <el-form-item label="菜單名稱">
+        <el-form-item label="選單名稱">
           <el-input
             v-model="queryParams.title"
-            placeholder="請輸入菜單名稱"
+            placeholder="請輸入選單名稱"
             clearable
             size="small"
             @keyup.enter.native="handleQuery"
@@ -31,7 +31,7 @@
         row-key="menuId"
         :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
       >
-        <el-table-column prop="title" label="菜單名稱" :show-overflow-tooltip="true" width="180px" />
+        <el-table-column prop="title" label="選單名稱" :show-overflow-tooltip="true" width="180px" />
         <el-table-column prop="icon" label="圖標" align="center" width="100px">
           <template slot-scope="scope">
             <svg-icon :icon-class="scope.row.icon" />
@@ -85,24 +85,24 @@
         </el-table-column>
       </el-table>
     </el-card>
-    <!-- 添加或修改菜單對話框 -->
+    <!-- 添加或修改選單對話框 -->
     <el-dialog :title="title" :visible.sync="open" width="800px">
       <el-form ref="form" :model="form" :rules="rules" label-width="100px">
         <el-row>
           <el-col :span="24">
-            <el-form-item label="上級菜單" style="width: 95%">
+            <el-form-item label="處級選單" style="width: 95%">
               <treeselect
                 v-model="form.parentId"
                 :options="menuOptions"
                 :normalizer="normalizer"
                 :show-count="true"
-                placeholder="選擇上級菜單"
+                placeholder="選擇處級選單"
               />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="菜單標題" prop="title" style="width: 90%">
-              <el-input v-model="form.title" placeholder="請輸入菜單標題" />
+            <el-form-item label="選單標題" prop="title" style="width: 90%">
+              <el-input v-model="form.title" placeholder="請輸入選單標題" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -112,10 +112,10 @@
           </el-col>
 
           <el-col :span="24">
-            <el-form-item label="菜單類型" prop="menuType">
+            <el-form-item label="選單類型" prop="menuType">
               <el-radio-group v-model="form.menuType">
                 <el-radio label="M">目錄</el-radio>
-                <el-radio label="C">菜單</el-radio>
+                <el-radio label="C">選單</el-radio>
                 <el-radio label="F">按鈕</el-radio>
                 <el-radio label="A">接口</el-radio>
               </el-radio-group>
@@ -132,7 +132,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="24">
-            <el-form-item label="菜單圖標" style="width: 95%">
+            <el-form-item label="選單圖標" style="width: 95%">
               <el-popover
                 placement="bottom-start"
                 width="460"
@@ -186,7 +186,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="24">
-            <el-form-item v-if="form.menuType != 'F'" label="菜單狀態">
+            <el-form-item v-if="form.menuType != 'F'" label="選單狀態">
               <el-radio-group v-model="form.visible">
                 <el-radio
                   v-for="dict in visibleOptions"
@@ -219,15 +219,15 @@ export default {
     return {
       // 遮罩層
       loading: true,
-      // 菜單表格樹數據
+      // 選單表格樹數據
       menuList: [],
-      // 菜單樹選項
+      // 選單樹選項
       menuOptions: [],
       // 彈出層標題
       title: '',
       // 是否顯示彈出層
       open: false,
-      // 菜單狀態數據字典
+      // 選單狀態數據字典
       visibleOptions: [{
         dictValue: '0',
         dictLabel: '顯示'
@@ -245,10 +245,10 @@ export default {
       // 表單校驗
       rules: {
         title: [
-          { required: true, message: '菜單標題不能為空', trigger: 'blur' }
+          { required: true, message: '選單標題不能為空', trigger: 'blur' }
         ],
         sort: [
-          { required: true, message: '菜單順序不能為空', trigger: 'blur' }
+          { required: true, message: '選單順序不能為空', trigger: 'blur' }
         ]
       }
     }
@@ -261,7 +261,7 @@ export default {
     selected(name) {
       this.form.icon = name
     },
-    /** 查詢菜單列表 */
+    /** 查詢選單列表 */
     getList() {
       this.loading = true
       listMenu(this.queryParams).then(response => {
@@ -269,7 +269,7 @@ export default {
         this.loading = false
       })
     },
-    /** 轉換菜單數據結構 */
+    /** 轉換選單數據結構 */
     normalizer(node) {
       if (node.children && !node.children.length) {
         delete node.children
@@ -280,7 +280,7 @@ export default {
         children: node.children
       }
     },
-    /** 查詢菜單下拉樹結構 */
+    /** 查詢選單下拉樹結構 */
     getTreeselect() {
       listMenu().then(response => {
         this.menuOptions = []
@@ -289,7 +289,7 @@ export default {
         this.menuOptions.push(menu)
       })
     },
-    // 菜單顯示狀態字典翻譯
+    // 選單顯示狀態字典翻譯
     visibleFormat(row) {
       if (row.menuType === 'F') {
         return '-- --'
@@ -331,7 +331,7 @@ export default {
         this.form.parentId = row.menuId
       }
       this.open = true
-      this.title = '添加菜單'
+      this.title = '添加選單'
     },
     /** 修改按鈕操作 */
     handleUpdate(row) {
@@ -340,7 +340,7 @@ export default {
       getMenu(row.menuId).then(response => {
         this.form = response.data
         this.open = true
-        this.title = '修改菜單'
+        this.title = '修改選單'
       })
     },
     /** 提交按鈕 */

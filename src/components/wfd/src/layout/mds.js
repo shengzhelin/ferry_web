@@ -8,17 +8,17 @@ const Util = require('../util/layout')
 const Numeric = require('numericjs')
 
 /**
- * mds 布局
+ * mds 佈局
  */
 Layout.registerLayout('mds', {
   getDefaultCfg() {
     return {
-      center: [0, 0], // 布局中心
+      center: [0, 0], // 佈局中心
       linkDistance: 50 // 默認邊長度
     }
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

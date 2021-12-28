@@ -17,7 +17,7 @@ export default {
         el.parentNode && el.parentNode.removeChild(el)
       }
     } else {
-      throw new Error(`請設置操作權限標簽值`)
+      throw new Error(`請設置操作權限標籤值`)
     }
   }
 }

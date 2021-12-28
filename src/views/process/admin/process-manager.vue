@@ -64,7 +64,7 @@
               type="text"
               icon="el-icon-receiving"
               @click="handleClone(scope.row)"
-            >克隆</el-button>
+            >複製</el-button>
             <el-button
               v-permisaction="['process:admin:manager:edit']"
               size="mini"
@@ -506,7 +506,7 @@ export default {
       }
     },
     handleClone(row) {
-      this.$confirm(`確認克隆流程 < ${row.name} > ?`, '提示', {
+      this.$confirm(`確認複製流程 < ${row.name} > ?`, '提示', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'info'
@@ -515,7 +515,7 @@ export default {
           this.getList()
           this.$message({
             type: 'success',
-            message: '流程已克隆!'
+            message: '流程已複製!'
           })
         })
       }).catch(() => {

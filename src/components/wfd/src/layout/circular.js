@@ -61,12 +61,12 @@ function compareDegree(a, b) {
 }
 
 /**
- * 圓形布局
+ * 圓形佈局
  */
 Layout.registerLayout('circular', {
   getDefaultCfg() {
     return {
-      center: [0, 0], // 布局中心
+      center: [0, 0], // 佈局中心
       radius: null, // 默認固定半徑，若設置了 radius，則 startRadius 與 endRadius 不起效
       startRadius: null, // 默認起始半徑
       endRadius: null, // 默認終止半徑
@@ -79,7 +79,7 @@ Layout.registerLayout('circular', {
     }
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

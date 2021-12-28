@@ -10,13 +10,13 @@ const isArray = require('@antv/util/lib/type/is-array')
 const SPEED_DIVISOR = 800
 
 /**
- * fruchterman 布局
+ * fruchterman 佈局
  */
 Layout.registerLayout('fruchtermanGroup', {
   getDefaultCfg() {
     return {
-      maxIteration: 1000, // 停止叠代的最大叠代數
-      center: [0, 0], // 布局中心
+      maxIteration: 1000, // 停止疊代的最大疊代數
+      center: [0, 0], // 佈局中心
       gravity: 1, // 重力大小，影響圖的緊湊程度
       speed: 1, // 速度
       groupGravity: 1, // 聚類力大小
@@ -43,7 +43,7 @@ Layout.registerLayout('fruchtermanGroup', {
     self.groupController = self.graph.get('customGroupControll') // controller
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

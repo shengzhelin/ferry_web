@@ -64,7 +64,7 @@ export default {
       fullscreen: false,
       languageTypeList: {
         'en': 'en',
-        'zh': 'zh_CN',
+        'zh': 'zh_TW',
         'es': 'es_MX',
         'ja': 'ja'
       }
@@ -177,7 +177,7 @@ export default {
         //       progress(100);
         //     })
         //   }).catch(err => {
-        //     failure('出現未知問題，刷新頁面，或者聯系程序員')
+        //     failure('出現未知問題，刷新頁面，或者聯繫程序員')
         //     console.log(err);
         //   });
         // },

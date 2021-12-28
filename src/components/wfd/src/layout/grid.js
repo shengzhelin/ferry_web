@@ -20,12 +20,12 @@ function getDegree(n, nodeIdxMap, edges) {
 }
 
 /**
- * 網格布局
+ * 網格佈局
  */
 Layout.registerLayout('grid', {
   getDefaultCfg() {
     return {
-      begin: [0, 0], // 布局起始點
+      begin: [0, 0], // 佈局起始點
       preventOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
       preventOverlapPadding: 10, // extra spacing around nodes when preventOverlap: true
       condense: false, // uses all available space on false, uses minimal space on true
@@ -37,7 +37,7 @@ Layout.registerLayout('grid', {
     }
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

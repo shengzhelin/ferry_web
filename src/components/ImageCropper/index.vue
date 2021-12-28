@@ -254,7 +254,7 @@ export default {
       // 上傳狀態及進度
       loading: 0, // 0未開始 1正在 2成功 3錯誤
       progress: 0,
-      // 是否有錯誤及錯誤信息
+      // 是否有錯誤及錯誤訊息
       hasError: false,
       errorMsg: '',
       // 需求圖寬高比
@@ -640,7 +640,7 @@ export default {
       }
       zoom()
     },
-    // 按鈕松開或移開取消放大
+    // 按鈕鬆開或移開取消放大
     endZoomAdd(e) {
       this.scale.zoomAddOn = false
     },
@@ -659,7 +659,7 @@ export default {
       }
       zoom()
     },
-    // 按鈕松開或移開取消縮小
+    // 按鈕鬆開或移開取消縮小
     endZoomSub(e) {
       const { scale } = this
       scale.zoomSubOn = false

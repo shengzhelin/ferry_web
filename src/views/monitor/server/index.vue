@@ -5,7 +5,7 @@
       <el-col :span="12" class="card-box">
         <el-card>
           <div slot="header">
-            <span>服務器信息</span>
+            <span>服務器訊息</span>
           </div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <table cellspacing="0" style="width: 100%;">
@@ -98,7 +98,7 @@
       <el-col :span="12" class="card-box">
         <el-card>
           <div slot="header">
-            <span>磁盤狀態</span>
+            <span>硬碟狀態</span>
           </div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <table cellspacing="0" style="width: 100%;">
@@ -134,9 +134,9 @@ export default {
   name: 'Server',
   data() {
     return {
-      // 加載層信息
+      // 加載層訊息
       loading: [],
-      // 服務器信息
+      // 服務器訊息
       server: []
     }
   },
@@ -145,7 +145,7 @@ export default {
     this.openLoading()
   },
   methods: {
-    /** 查詢服務器信息 */
+    /** 查詢服務器訊息 */
     getList() {
       getServer().then(response => {
         this.server = response

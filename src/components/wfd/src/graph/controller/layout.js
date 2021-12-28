@@ -61,7 +61,7 @@ class LayoutController {
 
     this.worker.terminate()
     this.worker = null
-    // 重新開始新的布局之前，先取消之前布局的requestAnimationFrame。
+    // 重新開始新的佈局之前，先取消之前佈局的requestAnimationFrame。
     if (workerData.requestId) {
       helper.cancelAnimationFrame(workerData.requestId)
       workerData.requestId = null
@@ -74,7 +74,7 @@ class LayoutController {
 
   /**
    * @param {function} success callback
-   * @return {boolean} 是否使用web worker布局
+   * @return {boolean} 是否使用web worker佈局
    */
   layout(success) {
     const self = this
@@ -100,9 +100,9 @@ class LayoutController {
 
     if (layoutType === undefined) {
       if (nodes[0] && nodes[0].x === undefined) {
-        // 創建隨機布局
+        // 創建隨機佈局
         layoutType = layoutCfg.type = 'random'
-      } else { // 若未指定布局且數據中有位置信息，則不進行布局，直接按照原數據坐標繪制。
+      } else { // 若未指定佈局且數據中有位置訊息，則不進行佈局，直接按照原數據坐標繪制。
         return false
       }
     } else {
@@ -119,7 +119,7 @@ class LayoutController {
 
     this._stopWorker()
     if (layoutCfg.workerEnabled && this._layoutWithWorker(self.data, success)) {
-      // 如果啟用布局web worker並且瀏覽器支持web worker，用web worker布局。否則回退到不用web worker布局。
+      // 如果啟用佈局web worker並且瀏覽器支持web worker，用web worker佈局。否則回退到不用web worker佈局。
       return true
     }
 
@@ -177,10 +177,10 @@ class LayoutController {
     workerData.currentTickData = null
 
     graph.emit('beforelayout')
-    // NOTE: postMessage的message參數里面不能包含函數，否則postMessage會報錯，
+    // NOTE: postMessage的message參數裡面不能包含函數，否則postMessage會報錯，
     // 例如：'function could not be cloned'。
     // 詳情參考：https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
-    // 所以這里需要把過濾layoutCfg里的函數字段過濾掉。
+    // 所以這裡需要把過濾layoutCfg裡的函數字段過濾掉。
     const filteredLayoutCfg = filterObject(layoutCfg, value => typeof value !== 'function')
     worker.postMessage({ type: LAYOUT_MESSAGE.RUN, nodes, edges, layoutCfg: filteredLayoutCfg })
     worker.onmessage = event => {
@@ -223,8 +223,8 @@ class LayoutController {
               // 如果是最後一次tick
               onLayoutEnd()
             } else if (workerData.currentTick === eventData.totalTicks) {
-              // 注意這里workerData.currentTick可能已經不再是前面賦值時候的值了，
-              // 因為在requestAnimationFrame等待時間里，可能產生新的tick。
+              // 注意這裡workerData.currentTick可能已經不再是前面賦值時候的值了，
+              // 因為在requestAnimationFrame等待時間裡，可能產生新的tick。
               // 如果當前tick不是最後一次tick，並且所有的tick消息都已發出來了，那麽需要用最後一次tick的數據再刷新一次。
               workerData.requestId2 = helper.requestAnimationFrame(function() {
                 updateLayoutPosition(data, workerData.currentTickData)
@@ -239,11 +239,11 @@ class LayoutController {
         }
         break
       case LAYOUT_MESSAGE.END:
-        // 如果沒有tick消息（非力導布局）
+        // 如果沒有tick消息（非力導佈局）
         if (workerData.currentTick == null) {
           updateLayoutPosition(data, eventData)
           this.refreshLayout()
-          // 非力導布局，沒有tick消息，只有end消息，所以需要執行一次回調。
+          // 非力導佈局，沒有tick消息，只有end消息，所以需要執行一次回調。
           if (success) {
             success()
           }
@@ -268,7 +268,7 @@ class LayoutController {
     }
   }
 
-  // 更新布局參數
+  // 更新佈局參數
   updateLayoutCfg(cfg) {
     const self = this
     const graph = self.graph
@@ -278,7 +278,7 @@ class LayoutController {
 
     this._stopWorker()
     if (cfg.workerEnabled && this._layoutWithWorker(self.data, null)) {
-      // 如果啟用布局web worker並且瀏覽器支持web worker，用web worker布局。否則回退到不用web worker布局。
+      // 如果啟用佈局web worker並且瀏覽器支持web worker，用web worker佈局。否則回退到不用web worker佈局。
       return
     }
 
@@ -292,7 +292,7 @@ class LayoutController {
     self.refreshLayout()
   }
 
-  // 更換布局
+  // 更換佈局
   changeLayout(layoutType) {
     const self = this
     self.layoutType = layoutType
@@ -339,7 +339,7 @@ class LayoutController {
     return data
   }
 
-  // 重新布局
+  // 重新佈局
   relayout() {
     const self = this
     const graph = self.graph
@@ -356,7 +356,7 @@ class LayoutController {
     self.refreshLayout()
   }
 
-  // 控制布局動畫
+  // 控制佈局動畫
   layoutAnimate() {
   }
 

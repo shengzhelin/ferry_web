@@ -30,7 +30,7 @@ function hasPathPermission(paths, route) {
 }
 
 /**
-  * 後台查詢的菜單數據拼裝成路由格式的數據
+  * 後台查詢的選單數據拼裝成路由格式的數據
   * @param routes
   */
 export function generaMenu(routes, data) {
@@ -123,7 +123,7 @@ const actions = {
         let data = response
         if (response.code !== 200) {
           this.$message({
-            message: '菜單數據加載異常',
+            message: '選單數據加載異常',
             type: 0
           })
         } else {

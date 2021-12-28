@@ -19,12 +19,12 @@ function getDegree(n, nodeIdxMap, edges) {
   return degrees
 }
 /**
- * 同心圓布局
+ * 同心圓佈局
  */
 Layout.registerLayout('concentric', {
   getDefaultCfg() {
     return {
-      center: [0, 0], // 布局中心
+      center: [0, 0], // 佈局中心
       nodeSize: 30,
       minNodeSpacing: 10, // min spacing between outside of nodes (used for radius adjustment)
       preventOverlap: false, // prevents node overlap, may overflow boundingBox if not enough space
@@ -37,7 +37,7 @@ Layout.registerLayout('concentric', {
     }
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

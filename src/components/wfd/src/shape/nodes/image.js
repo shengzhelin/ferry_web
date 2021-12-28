@@ -124,7 +124,7 @@ Shape.registerNode('image', {
     const width = size[0]
     const height = size[1]
     const style = Util.mix({}, {
-      x: 0 - width / 2, // 節點的位置在上層確定，所以這里僅使用相對位置即可
+      x: 0 - width / 2, // 節點的位置在上層確定，所以這裡僅使用相對位置即可
       y: 0 - height / 2,
       width,
       height,

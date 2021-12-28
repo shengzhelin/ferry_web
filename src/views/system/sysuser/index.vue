@@ -98,7 +98,7 @@
             <el-table-column type="selection" width="45" align="center" />
             <el-table-column label="編號" width="50" align="center" prop="userId" />
             <el-table-column label="用戶名稱" align="center" prop="username" :show-overflow-tooltip="true" />
-            <el-table-column label="用戶昵稱" align="center" prop="nickName" :show-overflow-tooltip="true" />
+            <el-table-column label="用戶暱稱" align="center" prop="nickName" :show-overflow-tooltip="true" />
             <el-table-column label="部門" align="center" prop="deptName" :show-overflow-tooltip="true" />
             <el-table-column label="手機號碼" align="center" prop="phone" width="120" />
             <el-table-column label="狀態" width="68" align="center">
@@ -170,8 +170,8 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="用戶昵稱" prop="nickName" style="width: 90%">
-              <el-input v-model="form.nickName" placeholder="請輸入用戶昵稱" />
+            <el-form-item label="用戶暱稱" prop="nickName" style="width: 90%">
+              <el-input v-model="form.nickName" placeholder="請輸入用戶暱稱" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -185,8 +185,8 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="郵箱" prop="email" style="width: 90%">
-              <el-input v-model="form.email" placeholder="請輸入郵箱" maxlength="50" />
+            <el-form-item label="信箱" prop="email" style="width: 90%">
+              <el-input v-model="form.email" placeholder="請輸入信箱" maxlength="50" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -213,7 +213,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="崗位" style="width: 90%">
+            <el-form-item label="職稱" style="width: 90%">
               <el-select v-model="form.postId" placeholder="請選擇" style="width: 100%" @change="$forceUpdate()">
                 <el-option
                   v-for="item in postOptions"
@@ -227,7 +227,7 @@
           </el-col>
 
           <el-col :span="24">
-            <el-form-item label="備注" style="width: 95%">
+            <el-form-item label="備註" style="width: 95%">
               <el-input v-model="form.remark" type="textarea" placeholder="請輸入內容" />
             </el-form-item>
           </el-col>
@@ -306,7 +306,7 @@ export default {
       deptName: undefined,
       // 日期範圍
       dateRange: [],
-      // 崗位選項
+      // 職稱選項
       postOptions: [],
       // 角色選項
       roleOptions: [],
@@ -346,7 +346,7 @@ export default {
           { required: true, message: '用戶名稱不能為空', trigger: 'blur' }
         ],
         nickName: [
-          { required: true, message: '用戶昵稱不能為空', trigger: 'blur' }
+          { required: true, message: '用戶暱稱不能為空', trigger: 'blur' }
         ],
         deptId: [
           { required: true, message: '歸屬部門不能為空', trigger: 'blur' }
@@ -355,17 +355,17 @@ export default {
           { required: true, message: '用戶密碼不能為空', trigger: 'blur' }
         ],
         email: [
-          { required: true, message: '郵箱地址不能為空', trigger: 'blur' },
+          { required: true, message: '信箱地址不能為空', trigger: 'blur' },
           {
             type: 'email',
-            message: "'請輸入正確的郵箱地址",
+            message: "'請輸入正確的信箱地址",
             trigger: ['blur', 'change']
           }
         ],
         phone: [
           { required: true, message: '手機號碼不能為空', trigger: 'blur' },
           {
-            pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
+            pattern: /^0[9][0-9]\d{7}$/,
             message: '請輸入正確的手機號碼',
             trigger: 'blur'
           }
@@ -410,7 +410,7 @@ export default {
       this.queryParams.deptId = data.deptId
       this.getList()
     },
-    /** 轉換菜單數據結構 */
+    /** 轉換選單數據結構 */
     normalizer(node) {
       if (node.children && !node.children.length) {
         delete node.children

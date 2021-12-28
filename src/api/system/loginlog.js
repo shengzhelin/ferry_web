@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查詢登錄日志列表
+// 查詢登入日誌列表
 export function list(query) {
   return request({
     url: '/api/v1/loginloglist',
@@ -9,7 +9,7 @@ export function list(query) {
   })
 }
 
-// 刪除登錄日志
+// 刪除登入日誌
 export function delLogininfor(infoId) {
   return request({
     url: '/api/v1/loginlog/' + infoId,
@@ -17,7 +17,7 @@ export function delLogininfor(infoId) {
   })
 }
 
-// 清空登錄日志
+// 清空登入日誌
 export function cleanLogininfor() {
   return request({
     url: '/api/v1/loginlog',
@@ -25,7 +25,7 @@ export function cleanLogininfor() {
   })
 }
 
-// 導出登錄日志
+// 導出登入日誌
 export function exportLogininfor(query) {
   return request({
     url: '/api/v1/loginlog/export',

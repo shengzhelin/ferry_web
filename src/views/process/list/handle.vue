@@ -19,7 +19,7 @@
           <div v-else>
             <el-alert
               show-icon
-              title="未找到當前工單流程信息，請確認當前工單綁定的流程是否存在。"
+              title="未找到當前工單流程訊息，請確認當前工單綁定的流程是否存在。"
               type="warning"
             />
           </div>
@@ -36,7 +36,7 @@
 
       <el-card class="box-card" style="margin-top: 15px">
         <div slot="header" class="clearfix">
-          <span>公共信息</span>
+          <span>公共訊息</span>
         </div>
         <div class="text item">
           <el-form label-width="100px">
@@ -66,7 +66,7 @@
 
       <el-card class="box-card" style="margin-top: 15px;">
         <div slot="header" class="clearfix">
-          <span>表單信息</span>
+          <span>表單訊息</span>
         </div>
         <div class="text item">
           <template v-for="(tplItem, tplIndex) in processStructureValue.tpls">
@@ -95,7 +95,7 @@
             <el-input
               v-model="remarks"
               type="textarea"
-              placeholder="請輸入備注信息"
+              placeholder="請輸入備註訊息"
               maxlength="200"
               :autosize="{ minRows: 3, maxRows: 99}"
               show-word-limit
@@ -157,7 +157,7 @@
             />
             <el-table-column
               prop="remarks"
-              label="備注"
+              label="備註"
             />
           </el-table>
         </div>
@@ -193,7 +193,7 @@ export default {
       },
       isActiveProcessing: false,
       tpls: [],
-      remarks: '', // 備注信息
+      remarks: '', // 備註訊息
       alertMessage: '',
       nodeStepList: [],
       circulationHistoryList: [],

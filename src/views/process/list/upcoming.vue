@@ -85,7 +85,7 @@
               <el-option v-for="(item, index) in users" :key="index" :label="item.nickName" :value="item.userId" />
             </el-select>
           </el-form-item>
-          <el-form-item label="備注">
+          <el-form-item label="備註">
             <el-input v-model="ruleForm.remarks" type="textarea" size="small" />
           </el-form-item>
           <el-form-item style="text-align: right">

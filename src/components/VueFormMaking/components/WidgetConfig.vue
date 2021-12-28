@@ -14,8 +14,8 @@
         <el-input v-model="data.options.width" />
       </el-form-item>
 
-      <!-- 蘭玉磊開始添加 -->
-      <!-- 標簽寬度 -->
+      <!-- 開始添加 -->
+      <!-- 標籤寬度 -->
       <el-form-item
         v-if="Object.keys(data.options).indexOf('labelWidth')>=0 &&
           data.type!=='grid' &&
@@ -30,7 +30,7 @@
         v-if="Object.keys(data.options).indexOf('labelWidthStatus')>=0 &&
           data.type!=='grid' &&
           data.type !== 'divider'"
-        label="顯示標簽"
+        label="顯示標籤"
       >
         <el-switch
           v-model="data.options.labelWidthStatus"
@@ -39,7 +39,7 @@
       <el-form-item v-if="Object.keys(data.options).indexOf('tip')>=0" :label="$t('fm.config.widget.tip')">
         <el-input v-model="data.options.tip" />
       </el-form-item>
-      <!-- 蘭玉磊結束添加 -->
+      <!-- 結束添加 -->
 
       <!-- 高度 -->
       <el-form-item v-if="Object.keys(data.options).indexOf('height')>=0" :label="$t('fm.config.widget.height')">
@@ -54,7 +54,7 @@
       <el-form-item v-if="Object.keys(data.options).indexOf('placeholder')>=0 && (data.type!='time' || data.type!='date')" :label="$t('fm.config.widget.placeholder')">
         <el-input v-model="data.options.placeholder" />
       </el-form-item>
-      <!-- 布局方式，塊，行 -->
+      <!-- 佈局方式，塊，行 -->
       <el-form-item v-if="Object.keys(data.options).indexOf('inline')>=0" :label="$t('fm.config.widget.layout')">
         <el-radio-group v-model="data.options.inline">
           <el-radio-button :label="false">{{ $t('fm.config.widget.block') }}</el-radio-button>
@@ -97,7 +97,7 @@
           v-model="data.options.showAlpha"
         />
       </el-form-item>
-      <!-- 是否顯示標簽 -->
+      <!-- 是否顯示標籤 -->
       <el-form-item v-if="Object.keys(data.options).indexOf('showLabel')>=0" :label="$t('fm.config.widget.showLabel')">
         <el-switch
           v-model="data.options.showLabel"

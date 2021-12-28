@@ -134,7 +134,7 @@ const GraphicUtil = {
     traverse(data, fn)
   },
   radialLayout(data, layout) {
-    // 布局方式有 H / V / LR / RL / TB / BT
+    // 佈局方式有 H / V / LR / RL / TB / BT
     const VERTICAL_LAYOUTS = ['V', 'TB', 'BT']
     const min = {
       x: Infinity,
@@ -144,11 +144,11 @@ const GraphicUtil = {
       x: -Infinity,
       y: -Infinity
     }
-    // 默認布局是垂直布局TB，此時x對應rad，y對應r
+    // 默認佈局是垂直佈局TB，此時x對應rad，y對應r
     let rScale = 'x'
     let radScale = 'y'
     if (layout && VERTICAL_LAYOUTS.indexOf(layout) >= 0) {
-      // 若是水平布局，y對應rad，x對應r
+      // 若是水平佈局，y對應rad，x對應r
       radScale = 'x'
       rScale = 'y'
     }

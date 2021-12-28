@@ -58,7 +58,7 @@ const SingleShape = {
 	 * 獲取文本的配置項
 	 * @internal 用戶創建和更新節點/邊時，同時會更新文本
 	 * @param  {Object} cfg 節點的配置項
-   * @param {Object} labelCfg 文本的配置項
+     * @param {Object} labelCfg 文本的配置項
 	 * @param {G.Group} group 父容器，label 的定位可能與圖形相關
 	 * @return {Object} 圖形的配置項
 	 */

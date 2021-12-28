@@ -8,7 +8,7 @@ const Layout = require('./layout')
 const isArray = require('@antv/util/lib/type/is-array')
 
 /**
- * 隨機布局
+ * 隨機佈局
  */
 Layout.registerLayout('dagre', {
   getDefaultCfg() {
@@ -20,11 +20,11 @@ Layout.registerLayout('dagre', {
       ranksepFunc() { return 50 }, // 每一層節點之間間距
       nodesep: 50, // 節點水平間距(px)
       ranksep: 50, // 每一層節點之間間距
-      controlPoints: true // 是否保留布局連線的控制點
+      controlPoints: true // 是否保留佈局連線的控制點
     }
   },
   /**
-   * 執行布局
+   * 執行佈局
    */
   execute() {
     const self = this

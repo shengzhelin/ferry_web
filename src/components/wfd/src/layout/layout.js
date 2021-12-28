@@ -7,9 +7,9 @@ const Util = require('../util/layout')
 const Layout = {}
 
 /**
- * 注冊布局的方法
- * @param {string} type 布局類型，外部引用指定必須，不要與已有布局類型重名
- * @param {object} layout 布局方法
+ * 註冊佈局的方法
+ * @param {string} type 佈局類型，外部引用指定必須，不要與已有佈局類型重名
+ * @param {object} layout 佈局方法
  */
 Layout.registerLayout = function(type, layout) {
   if (!layout) {
@@ -30,12 +30,12 @@ Layout.registerLayout = function(type, layout) {
       self.edges = data.edges
     },
     /**
-     * 執行布局
+     * 執行佈局
      */
     execute() {
     },
     /**
-     * 根據傳入的數據進行布局
+     * 根據傳入的數據進行佈局
      * @param {object} data 數據
      */
     layout(data) {
@@ -44,7 +44,7 @@ Layout.registerLayout = function(type, layout) {
       self.execute()
     },
     /**
-     * 更新布局配置，但不執行布局
+     * 更新佈局配置，但不執行佈局
      * @param {object} cfg 需要更新的配置項
      */
     updateCfg(cfg) {

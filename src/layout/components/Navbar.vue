@@ -25,7 +25,7 @@
             <el-dropdown-item>個人中心</el-dropdown-item>
           </router-link>
           <el-dropdown-item divided>
-            <span style="display:block;" @click="logout">退出登錄</span>
+            <span style="display:block;" @click="logout">退出登入</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -62,7 +62,7 @@ export default {
       this.$store.dispatch('app/toggleSideBar')
     },
     async logout() {
-      this.$confirm('確定注銷並退出系統嗎？', '提示', {
+      this.$confirm('確定註銷並退出系統嗎？', '提示', {
         confirmButtonText: '確定',
         cancelButtonText: '取消',
         type: 'warning'

@@ -86,13 +86,13 @@
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-row>
           <el-col :span="24">
-            <el-form-item label="上級部門" prop="parentId">
+            <el-form-item label="處級部門" prop="parentId">
               <treeselect
                 v-model="form.parentId"
                 :options="deptOptions"
                 :normalizer="normalizer"
                 :show-count="true"
-                placeholder="選擇上級部門"
+                placeholder="選擇處級部門"
                 :is-disabled="isEdit"
               />
             </el-form-item>
@@ -120,13 +120,13 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="聯系電話" prop="phone">
-              <el-input v-model="form.phone" placeholder="請輸入聯系電話" maxlength="11" />
+            <el-form-item label="聯繫電話" prop="phone">
+              <el-input v-model="form.phone" placeholder="請輸入聯繫電話" maxlength="11" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="郵箱" prop="email">
-              <el-input v-model="form.email" placeholder="請輸入郵箱" maxlength="50" />
+            <el-form-item label="信箱" prop="email">
+              <el-input v-model="form.email" placeholder="請輸入信箱" maxlength="50" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -183,7 +183,7 @@ export default {
       // 表單校驗
       rules: {
         parentId: [
-          { required: true, message: '上級部門不能為空', trigger: 'blur' }
+          { required: true, message: '處級部門不能為空', trigger: 'blur' }
         ],
         deptName: [
           { required: true, message: '部門名稱不能為空', trigger: 'blur' }
@@ -197,7 +197,7 @@ export default {
         email: [
           {
             type: 'email',
-            message: "'請輸入正確的郵箱地址",
+            message: "'請輸入正確的信箱地址",
             trigger: ['blur', 'change']
           }
         ],

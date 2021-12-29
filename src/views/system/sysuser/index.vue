@@ -181,7 +181,7 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="手機號碼" prop="phone" style="width: 90%">
-              <el-input v-model="form.phone" placeholder="請輸入手機號碼" maxlength="11" />
+              <el-input v-model="form.phone" placeholder="請輸入手機號碼" maxlength="10" />
             </el-form-item>
           </el-col>
           <el-col :span="12">

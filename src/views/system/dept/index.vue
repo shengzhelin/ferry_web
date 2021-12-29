@@ -121,7 +121,7 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="聯繫電話" prop="phone">
-              <el-input v-model="form.phone" placeholder="請輸入聯繫電話" maxlength="11" />
+              <el-input v-model="form.phone" placeholder="請輸入聯繫電話" maxlength="10" />
             </el-form-item>
           </el-col>
           <el-col :span="12">

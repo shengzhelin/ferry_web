@@ -2,7 +2,7 @@
   "name": "ferry_web",
   "version": "1.0.0",
   "description": "A magical vue admin. An out-of-box UI solution for enterprise applications. Newest development stack of vue. Lots of awesome features",
-  "author": "lanyulei<fdevops@163.com>",
+  "author": "shengzhelin<aaa@aaa.com.tw>",
   "license": "LGPL-3.0",
   "scripts": {
     "dev": "vue-cli-service serve",

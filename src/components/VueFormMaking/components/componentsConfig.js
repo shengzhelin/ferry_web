@@ -456,7 +456,7 @@ export const advanceComponents = [
       remoteOptions: [],
       showAllLevels: true,
       options: [{
-        value: 'lanyulei',
+        value: 'shengzhelin',
         label: '作者',
         children: [{
           value: 'character',

@@ -12,10 +12,10 @@
             @keyup.enter.native="handleQuery"
           />
         </el-form-item>
-        <el-form-item label="用戶名稱">
+        <el-form-item label="用戶帳號">
           <el-input
             v-model="queryParams.username"
-            placeholder="請輸入用戶名稱"
+            placeholder="請輸入用戶帳號"
             clearable
             style="width: 240px;"
             size="small"
@@ -63,7 +63,7 @@
       <el-table v-loading="loading" border :data="list" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" align="center" />
         <el-table-column label="編號" width="100" align="center" prop="infoId" />
-        <el-table-column label="用戶名稱" width="150" align="center" prop="username" />
+        <el-table-column label="用戶帳號" width="150" align="center" prop="username" />
         <el-table-column label="登入地址" align="center" prop="ipaddr" width="130" :show-overflow-tooltip="true" />
         <el-table-column label="登入地點" align="center" prop="loginLocation" />
         <el-table-column label="瀏覽器" align="center" prop="browser" />
@@ -186,7 +186,7 @@ export default {
       }).then(() => {
         this.downloadLoading = true
         import('@/vendor/Export2Excel').then(excel => {
-          const tHeader = ['編號', '用戶名稱', '登入地址', '登入地點', '瀏覽器', '操作系統', '登入狀態', '操作訊息', '登入日期']
+          const tHeader = ['編號', '用戶帳號', '登入地址', '登入地點', '瀏覽器', '操作系統', '登入狀態', '操作訊息', '登入日期']
           const filterVal = ['infoId', 'username', 'ipaddr', 'loginLocation', 'browser', 'os', 'status', 'msg', 'loginTime']
           const list = this.list
           const data = formatJson(filterVal, list)

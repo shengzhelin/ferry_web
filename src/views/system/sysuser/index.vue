@@ -31,10 +31,10 @@
       <el-col :span="20" :xs="24">
         <el-card class="box-card">
           <el-form ref="queryForm" :model="queryParams" :inline="true" label-width="68px">
-            <el-form-item label="用戶名稱" prop="username">
+            <el-form-item label="用戶帳號" prop="username">
               <el-input
                 v-model="queryParams.username"
-                placeholder="請輸入用戶名稱"
+                placeholder="請輸入用戶帳號"
                 clearable
                 size="small"
                 style="width: 240px"
@@ -97,8 +97,8 @@
           >
             <el-table-column type="selection" width="45" align="center" />
             <el-table-column label="編號" width="50" align="center" prop="userId" />
-            <el-table-column label="用戶名稱" align="center" prop="username" :show-overflow-tooltip="true" />
-            <el-table-column label="用戶暱稱" align="center" prop="nickName" :show-overflow-tooltip="true" />
+            <el-table-column label="用戶帳號" align="center" prop="username" :show-overflow-tooltip="true" />
+            <el-table-column label="用戶名稱" align="center" prop="nickName" :show-overflow-tooltip="true" />
             <el-table-column label="部門" align="center" prop="deptName" :show-overflow-tooltip="true" />
             <el-table-column label="手機號碼" align="center" prop="phone" width="120" />
             <el-table-column label="狀態" width="68" align="center">
@@ -165,13 +165,13 @@
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-row>
           <el-col :span="12">
-            <el-form-item label="用戶名稱" prop="username" style="width: 90%">
-              <el-input v-model="form.username" placeholder="請輸入用戶名稱" />
+            <el-form-item label="用戶帳號" prop="username" style="width: 90%">
+              <el-input v-model="form.username" placeholder="請輸入用戶帳號" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="用戶暱稱" prop="nickName" style="width: 90%">
-              <el-input v-model="form.nickName" placeholder="請輸入用戶暱稱" />
+            <el-form-item label="用戶名稱" prop="nickName" style="width: 90%">
+              <el-input v-model="form.nickName" placeholder="請輸入用戶名稱" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -343,10 +343,10 @@ export default {
       // 表單校驗
       rules: {
         username: [
-          { required: true, message: '用戶名稱不能為空', trigger: 'blur' }
+          { required: true, message: '用戶帳號不能為空', trigger: 'blur' }
         ],
         nickName: [
-          { required: true, message: '用戶暱稱不能為空', trigger: 'blur' }
+          { required: true, message: '用戶名稱不能為空', trigger: 'blur' }
         ],
         deptId: [
           { required: true, message: '歸屬部門不能為空', trigger: 'blur' }

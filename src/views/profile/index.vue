@@ -12,7 +12,7 @@
             </div>
             <ul class="list-group list-group-striped">
               <li class="list-group-item">
-                <svg-icon icon-class="user" /> 用戶名稱
+                <svg-icon icon-class="user" /> 用戶帳號
                 <div class="pull-right">{{ user.username }}</div>
               </li>
               <li class="list-group-item">
